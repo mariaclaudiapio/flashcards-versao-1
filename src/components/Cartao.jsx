@@ -1,10 +1,15 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 export default function Cartao({
   titulo = 'Título do cartão',
   descricao = 'Descrição do cartão',
+  mostraTituloCartao = true,
 }) {
-  const [mostraTitulo, setMostraTitulo] = useState(false);
+  const [mostraTitulo, setMostraTitulo] = useState(mostraTituloCartao);
+
+  useEffect(() => {
+    setMostraTitulo(mostraTituloCartao);
+  }, [mostraTituloCartao]);
 
   const tamanhoDaFonte = mostraTitulo ? 'text-2xl' : 'text-md';
 
