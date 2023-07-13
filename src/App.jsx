@@ -1,3 +1,9 @@
+import FlashcardsPage from "./pages/FlashcardsPage";
+
 export default function App() {
-  return <div></div>;
+  return (
+    <>
+      <FlashcardsPage />
+    </>
+  );
 }
