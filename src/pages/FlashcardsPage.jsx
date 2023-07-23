@@ -1,13 +1,14 @@
-import Header from "../components/Header";
-import Main from "../components/Main";
-import Footer from "../components/Footer";
+import FlashCard from '../components/Flashcard';
+import Header from '../components/Header';
+import Main from '../components/Main';
 
-export default function Home() {
+export default function FlashcardsPage() {
   return (
     <>
-      <Header>Flashcards - v1</Header>
-      <Main>Conteúdo do site</Main>
-      <Footer>Desenvolvido por &copy;Maria Cláudia - 2023</Footer>
+      <Header>React Flashcards v1</Header>
+      <Main>
+        <FlashCard />
+      </Main>
     </>
   );
 }

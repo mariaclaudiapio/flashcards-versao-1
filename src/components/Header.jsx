@@ -1,8 +1,13 @@
-export default function Header({ children: header = "cabeçalho do site" }) {
+export default function Header({ children, size }) {
+  let fontSize = 'text-xl';
+
+  if (size === 'large') {
+    fontSize = 'text-2xl';
+  }
   return (
     <header>
       <div className="bg-indigo-300 mx-auto p-4 shadow-md rounded-b-lg">
-        <h1 className="text-center font-semibold text-3xl">{header}</h1>
+        <h1 className={`text-center font-semibold ${fontSize}`}>{children}</h1>
       </div>
     </header>
   );
