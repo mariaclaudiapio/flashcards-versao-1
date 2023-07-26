@@ -4,7 +4,7 @@ export default function FlashCard({
   title = 'Título do cartão',
   description = 'Descrição do cartão',
 }) {
-  const [showTitle, setShowTitle] = useState(false);
+  const [showTitle, setShowTitle] = useState(true);
 
   const fontSizeClassName = showTitle ? 'text-2xl' : 'text-md';
 

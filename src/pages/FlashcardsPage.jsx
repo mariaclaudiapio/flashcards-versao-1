@@ -1,19 +1,41 @@
+import { useState } from 'react';
+
+import Button from '../components/Button';
 import FlashCard from '../components/Flashcard';
 import FlashcardsContainer from '../components/FlashcardsContainer';
 import Header from '../components/Header';
 import Main from '../components/Main';
 
 import { allFlashcards } from '../data/allFlashcards';
+import { helperShuffleArray } from '../services/arrayHelpers';
 
 export default function FlashcardsPage() {
+  const [allCards, setAllCards] = useState(allFlashcards);
+
+  function handleButtonClick() {
+    const shuffledCards = helperShuffleArray(allCards);
+
+    setAllCards(shuffledCards);
+  }
+
   return (
     <>
       <Header>React Flashcards v1</Header>
       <Main>
+        <div className="text-center">
+          <Button onButtonClick={handleButtonClick}>Embaralhar cartões</Button>
+        </div>
+        <div className="text-center mb-4"></div>
         <FlashcardsContainer>
-          <FlashCard />
+          {allCards.map(({ id, title, description }) => {
+            return (
+              <FlashCard key={id} title={title} description={description} />
+            );
+          })}
         </FlashcardsContainer>
       </Main>
     </>
   );
 }
+
+// retomar da aula 4.5
