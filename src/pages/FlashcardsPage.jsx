@@ -3,6 +3,7 @@ import { useState } from 'react';
 import Button from '../components/Button';
 import FlashCard from '../components/Flashcard';
 import FlashcardsContainer from '../components/FlashcardsContainer';
+import Footer from '../components/Footer';
 import Header from '../components/Header';
 import Main from '../components/Main';
 
@@ -34,6 +35,7 @@ export default function FlashcardsPage() {
           })}
         </FlashcardsContainer>
       </Main>
+      <Footer>Desenvolvido por Maria Cláudia&copy; - 2023</Footer>
     </>
   );
 }
