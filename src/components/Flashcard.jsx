@@ -1,10 +1,15 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 export default function FlashCard({
   title = 'Título do cartão',
   description = 'Descrição do cartão',
+  showFlashcardTitle = true,
 }) {
-  const [showTitle, setShowTitle] = useState(true);
+  const [showTitle, setShowTitle] = useState(showFlashcardTitle);
+
+  useEffect(() => {
+    setShowTitle(showFlashcardTitle);
+  }, [showFlashcardTitle]);
 
   const fontSizeClassName = showTitle ? 'text-2xl' : 'text-md';
 
