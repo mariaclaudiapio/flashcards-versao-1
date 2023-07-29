@@ -23,7 +23,7 @@ export default function FlashCard({
       className={` p-4 m-4 w-80 h-60 rounded-xl shadow-md cursor-pointer
       flex flex-row items-center justify-center my-4 text-center
       font-semibold
-    bg-indigo-100 ${fontSizeClassName}`}
+    bg-pink-200 ${fontSizeClassName}`}
       onClick={handleCardClick}
     >
       {showTitle ? title : description}
