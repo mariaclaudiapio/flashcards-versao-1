@@ -1,21 +1,18 @@
 import { useEffect, useState } from 'react';
 
 export default function FlashCard({
+  id,
   title = 'Título do cartão',
   description = 'Descrição do cartão',
   showFlashcardTitle = true,
+  onToggleFlashcard = null,
 }) {
-  const [showTitle, setShowTitle] = useState(showFlashcardTitle);
-
-  useEffect(() => {
-    setShowTitle(showFlashcardTitle);
-  }, [showFlashcardTitle]);
-
-  const fontSizeClassName = showTitle ? 'text-2xl' : 'text-md';
+  const fontSizeClassName = showFlashcardTitle ? 'text-2xl' : 'text-md';
 
   function handleCardClick() {
-    // setShowTitle(!showTitle);
-    setShowTitle(currentShowTitle => !currentShowTitle);
+    if (onToggleFlashcard) {
+      onToggleFlashcard(id);
+    }
   }
 
   return (
@@ -26,7 +23,7 @@ export default function FlashCard({
     bg-pink-200 ${fontSizeClassName}`}
       onClick={handleCardClick}
     >
-      {showTitle ? title : description}
+      {showFlashcardTitle ? title : description}
     </div>
   );
 }
