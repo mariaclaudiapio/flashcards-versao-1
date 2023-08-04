@@ -48,7 +48,7 @@ export default function FlashcardsPage() {
 
   return (
     <>
-      <Header>React Flashcards v1</Header>
+      <Header>React Flashcards v2</Header>
       <Main>
         <div className="text-center">
           <Button onButtonClick={handleButtonClick}>Embaralhar cartões</Button>
